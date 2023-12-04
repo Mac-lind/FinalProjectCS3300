@@ -1,0 +1,11 @@
+<!-- plant_create.html -->
+{% extends 'finalProject_app/base_template.html' %}
+
+{% block content %}
+<h1>Create a New Plant</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Plant</button>
+</form>
+{% endblock %}

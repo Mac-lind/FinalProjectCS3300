@@ -1,0 +1,14 @@
+{% extends 'finalProject_app/base_template.html' %}
+
+{% block content %}
+<h1>Work Order: {{ workorder.name }}</h1>
+
+
+<p><strong>Location:</strong> {{ workorders.plant }}</p>
+<p><strong>Description:</strong> {{ workorders.description }}</p>
+<p><strong>Priority:</strong> {{ workorders.priority }}</p>
+<p><strong>Start Date:</strong> {{ workorders.startDate }}</p>
+<p><strong>End Date:</strong> {{ workorders.endDate }}</p>
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'finalProject_app/base_template.html' %}
+
+{% block content %}
+  <h2>User Details</h2>
+  <p><strong>Username:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>First Name:</strong> {{ user.first_name }}</p>
+  <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+
+  {% if user.employee %}
+    <h3>Work Order</h3>
+    <p><strong>Work Order Name:</strong> {{ user.employee.workorders.name }}</p>
+    <p><strong>Work Order Description:</strong> {{ user.employee.workorders.description }}</p>
+
+    {# Add more work order details based on your model fields #}
+  <h3> Employee Information</h3>
+  <form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-primary" type="submit" name="Update">
+  </form>
+    
+{% endblock %}

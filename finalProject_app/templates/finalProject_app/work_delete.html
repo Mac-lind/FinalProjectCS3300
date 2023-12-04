@@ -1,0 +1,14 @@
+{% extends 'finalProject_app/base_template.html' %}
+
+{% block content %}
+<h1>Confirm Deletion</h1>
+<p>Are you sure you want to delete the Work Order "{{ workorders.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+</form>
+<a class="btn btn-secondary" href="{% url 'work' %}">Cancel</a>
+
+{% endblock %}
+
+

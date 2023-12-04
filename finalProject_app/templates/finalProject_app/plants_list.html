@@ -1,0 +1,23 @@
+{% extends "finalProject_app/base_template.html" %}
+
+
+{% block content %}
+    <h1>Plants</h1>
+    <a class="btn btn-primary" href="{% url 'plant-create' %}">Create Plant</a>
+{% if plants_list %}
+<ul>
+{% for plant in plants_list %}
+<li>
+    <a class="nav-link" href="{{ plant.get_absolute_url }}">{{ plant.name }}</a>
+    <a class="btn btn-secondary" href="{% url 'plant-edit' pk=plant.id %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'plant-delete' pk=plant.id %}">Remove</a>
+    
+</li>
+</li>
+
+{% endfor %}
+</ul>
+{% else %}
+    <p>There are no plants registered.</p>
+{% endif %}
+{% endblock %}

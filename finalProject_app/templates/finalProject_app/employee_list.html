@@ -1,0 +1,22 @@
+<!-- employee_list.html -->
+
+{% extends 'finalProject_app/base_template.html' %}
+
+{% block content %}
+    <h1>Employee List</h1>
+    <a class="btn btn-primary" href="{% url 'employee-create' %}">Create Employee</a>
+    {% if employee_list %}
+        <ul>
+            {% for employee in employee_list %}
+                <li>
+                    <a href="{{ employee.get_absolute_url }}">{{ employee.name }}</a>
+                    <a class="btn btn-secondary" href="{% url 'employee-edit' pk=employee.id %}">Edit</a>
+                    <a class="btn btn-danger" href="{% url 'employee-delete' pk=employee.id %}">Remove</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No employees available.</p>
+    {% endif %}
+{% endblock %}
+

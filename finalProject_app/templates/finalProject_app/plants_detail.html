@@ -1,0 +1,23 @@
+{% extends 'finalProject_app/base_template.html' %}
+
+
+{% block content %}
+<h1>Plant: {{ plants.name }}</h1>
+
+
+<p><strong>Function:</strong> {{ plants.function }}</p>
+<p><strong>Location:</strong> {{ plants.location }}</p>
+
+<h2>Work Orders</h2>
+    {% if work_orders %}
+        <ul>
+            {% for work_order in work_orders %}
+                <li><a href="{{ work_order.get_absolute_url }}">{{ work_order.name }}</a></li>
+                <!-- Display other work order details if needed -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No work orders associated with this plant.</p>
+    {% endif %}
+
+{% endblock %}

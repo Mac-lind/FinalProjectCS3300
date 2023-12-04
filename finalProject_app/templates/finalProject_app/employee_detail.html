@@ -1,0 +1,14 @@
+<!-- employee_detail.html -->
+
+{% extends 'finalProject_app/base_template.html' %}
+
+{% block content %}
+    <h1>Employee Detail</h1>
+    <p><strong>Name:</strong> {{ object.name }}</p>
+    <p><strong>Work Title:</strong> {{ object.workTitle }}</p>
+    <p><strong>Email:</strong> {{ object.email }}</p>
+    <p><strong>Related Work Order:</strong> <a href="{{ object.workOrder.get_absolute_url }}">{{ object.workOrder.name }}</a></p>
+    <!-- Add any other fields you want to display -->
+
+
+{% endblock %}
